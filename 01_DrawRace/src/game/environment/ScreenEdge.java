@@ -1,13 +1,18 @@
 package game.environment;
 
-import game.components.Ball;
+import game.components.Player;
 import processing.core.PApplet;
 import processing.core.PVector;
 
 public class ScreenEdge {
+	PApplet p;	
+	
+	public ScreenEdge (PApplet p) {
+		this.p = p;		
+	}
 
-	public void checkEdges(PApplet p, Ball ball) {
-		PVector location = ball.getLocation();
+	public void checkEdges(Player player) {
+		PVector location = player.getLocation();
 		if (location.x > p.width) {
 			location.x = 0;
 		}
